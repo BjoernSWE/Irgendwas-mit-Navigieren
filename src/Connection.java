@@ -6,6 +6,8 @@ public City stadt2;
 
     public Connection(City stadt1, City stadt2)
     {
+        this.stadt1 = stadt1;
+        this.stadt2 = stadt2;
         this.Distance = getDistanceInKm(stadt1, stadt2);
     }
 
@@ -32,18 +34,15 @@ public City stadt2;
         }
 
         public City getOtherCity(City stadt)
-        {
-            if (stadt.getName().equals(stadt1.getName()))
-            {
-                return stadt1;
-            }
-            else if (stadt1.getName().equals(stadt2.getName()))
-            {
-                return stadt2;
-            }
-            else
-            {
-                return null;
-            }
-        }
+{
+    if (stadt.equals(stadt1)) {
+        return stadt2;
+    } else if (stadt.equals(stadt2)) {
+        return stadt1;
+    } else {
+        return null;
+    }
+}
+
+        
 }
